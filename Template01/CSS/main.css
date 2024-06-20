@@ -1,0 +1,473 @@
+/* start variables */
+:root{
+    --main-color: #10cab7;
+}
+/* end variables */
+
+/* atart component  */
+.special-header{
+    color: #ebeced;
+    font-size: 100px;
+   
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: -5px;
+    margin: 0;
+
+}
+
+.special-header + p {
+    text-align: center;
+    margin-top: -30px;
+    font-size: 20px;
+    color: #797979;
+}
+
+
+/* end component  */
+
+
+
+/* start global rules */
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    
+}
+*:not(html){
+    overflow-y: hidden;
+}
+
+body{
+    font-family: "Work Sans", sans-serif;
+}
+
+.container{
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+
+}
+
+@media (max-width: 767px){
+    .special-header{
+        font-size: 70px;
+    }
+    .special-header + p{
+        margin-top: -20px;
+    }
+}
+@media (min-width: 768px){
+    .container{
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px){
+    .container{
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px){
+    .container{
+        width: 1170px;
+    }
+}
+
+/* end global rules */
+
+/* start header */
+.header{
+    padding: 20px;
+    margin: 0;
+    width: 100vw;
+    overflow: visible;
+}
+
+.header .logo{
+    width: 60px;
+}
+
+.header .links{
+   width: 32px;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   position: relative;
+   overflow: visible;
+   
+}
+
+.header .links .icon{
+    width: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.header .links .icon span{
+    background-color: #333;
+    margin-bottom: 5px;
+    height: 2px;
+    width: 100%;
+
+}
+
+.header .container .links .icon span:nth-child(2){
+    width: 60%;
+    transition: 0.3s;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: visible;
+}
+
+.header .links:hover .icon span:nth-child(2){
+    width: 100%;
+
+}
+
+.header ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    min-width: 200px;
+    background-color: #eaeaea;
+    right: 0px;
+    position: absolute;
+    top: calc(100% + 15px);
+    display: none;
+    z-index: 1;
+    overflow: visible;
+
+}
+.header .container .links ul::before{
+    content: "";
+    width: 0;
+    height: 0;
+    border-bottom: 10px #eaeaea solid;
+    border-right: 10px transparent solid;
+    border-left: 10px transparent solid;
+    border-top: 10px transparent solid;
+    position: absolute;
+    right: 5px;
+    top: -19px;
+    z-index: 2;
+   
+}
+
+.header .container .links a{
+    color: black;
+    padding: 10px;
+    text-decoration: none;
+    transition: 0.3s;
+
+}
+.header .container .links a:hover{
+    padding-left: 20px;
+}
+
+.header .container .links li:hover {
+    background-color: #d3d2d2;
+}
+
+.header .container .links li{
+    padding: 7px;
+    transition: 0.3s;
+}
+.header .container .links li:not(:last-child){
+    border-bottom: 1px rgb(203, 200, 200) solid;
+}    
+
+.header .links:hover ul{
+    display: block;
+}
+/* end of header */
+
+/* start landing section */
+.landing{
+    background-image: url(../pics/mountain.jpg);
+    background-size: cover;
+    height: calc(100vh - 64px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.landing .text {
+    text-align: center;
+    margin: 0;
+    width: 290px;
+    
+}
+.landing .text h1{
+    font-weight: bold;
+    font-size: 50px;
+    color: var(--main-color);
+    margin-bottom: 30px;
+}
+/* end landing section */
+
+
+/* <!-- start features --> */
+.features{
+    padding: 60px 0;
+    background-color: #f6f6f6;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.features .feat{
+    padding: 20px;
+    text-align: center;
+    min-width: 300px;
+    max-width: 400px;
+}
+.features .feat i{
+    color: var(--main-color);
+}
+.features .feat h3{
+    font-weight: 800;
+    margin: 30px 0;
+}
+.features .feat p{
+    line-height: 1.8;
+    color: #777;
+    font-size: 17px;
+    
+}
+/* <!-- end features --> */
+/* start services */
+
+.content{
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+   margin-top: 100px;
+   gap: 30px;
+}
+.col .service{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-bottom: 30px;
+}
+@media (max-width: 767px){
+    .col .service{
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    .col .service i{
+        padding: 20px 0;
+    }
+}
+
+.col i{
+    color: var(--main-color);
+    padding: 0 40px 0 0;
+    font-size: 25px;
+
+}
+.services .service .text{
+    flex: 1;
+}
+.col .text h3{
+    margin-top: 0;
+}
+
+.services .deco .image{
+    background-color: aquamarine;
+    width: 200px;
+    height: 200px;
+    margin-left: -80px;
+    position: relative;
+    overflow: visible;
+    
+}
+.services .deco .image::before{
+    content: "";
+    background-color: #333;
+    width: 100px;
+    height: 300px;
+    margin-left: -100px;
+    position: absolute;
+    top: -50px;
+    right: -30px;
+    z-index: -1;
+    
+}
+@media (max-width: 1199px){
+    .services .col:last-child{
+        display: none;
+    }
+}
+.services .deco{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 400px;
+}
+/* end services */
+
+/* start portfolio */
+.portfolio{
+    background-color: #f6f6f6;
+}
+.portfolio .content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 100px 30px;
+    
+}
+.portfolio .card{
+    min-width: 300px;
+    max-width: 400px;
+    background-color: white;
+    
+}
+.portfolio .card .img{
+    width: 100%;
+    height: 300px;
+    background-size: cover;
+}
+@media (max-width: 906px){
+    .portfolio .card .img{
+        height: 200px;
+    }
+}
+.card h3,.card p{
+    padding: 0 18px;
+}
+
+.portfolio .card:first-child .img{
+    background-image: url(../pics/OIP1.jpg);
+}
+.portfolio .card:nth-child(2) .img{
+    background-image: url(../pics/2nd.jpg);
+}
+.portfolio .card:last-child .img{
+    background-image: url(../pics/R.jpg);
+}
+
+/* start portfolio */
+/* start about */
+.about .content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    overflow: visible;
+    margin-top: 150px;
+    flex-wrap: wrap;
+
+}
+.about .content p:first-child{
+    font-weight: 600;
+    margin-bottom: 40px;
+    position: relative;
+    overflow: visible;
+}
+.about .content p:first-child::before{
+    content: "";
+    width: 250px;
+    height: 5px;
+    background-color: #10cab7;
+    position: absolute;
+    left: 0;
+    bottom: -20px;
+}
+.about .text{
+    max-width: 400px;
+}
+
+.about .content .img{
+    width: 200px;
+    height: 250px;
+    background-color: #10cab7;
+    position: relative;
+    overflow: visible;
+    margin-right: 130px;
+}
+@media (max-width: 992px){
+    .about .img{
+        display: none;
+    }
+   .about .content{
+    margin-top: 60px;
+    padding: 30px;
+   }
+}
+.about .img::before{
+    content: "";
+    width: 80px;
+    height: 200px;
+    background-color: #333;
+    position: absolute;
+    right: -40px;
+    z-index: -1;
+    top: -50px;
+}
+.about .img::after{
+    content: "";
+    width: 150px;
+    height: 60px;
+    background-color: #333;
+    position: absolute;
+    right: -110px;
+    top: 150px;
+    z-index: -1;
+
+}
+/* end about */
+/* start contact */
+.contact{
+    background-color: #f6f6f6 ;
+    padding-bottom: 40px;
+    margin-top: 60px;
+}
+.contact .text{
+    margin-left: 130px;
+}
+.contact .text h3{
+    margin-left: 30px;
+}
+.contact h2{
+    font-size: 30px;
+    font-weight: 800;
+    color: #333;
+}
+.contact .text h3{
+    font-size: 25px;
+    /* font-weight: 800; */
+    color: #10cab7;
+}
+.contact .text p{
+    font-size: 15px;
+    margin-left: 60px;
+}
+@media (max-width: 767px){
+    .contact .text{
+        margin: auto auto;
+    }
+}
+/* end contact */
+
+
+
+
+
+
+
+
+
+
+
+
